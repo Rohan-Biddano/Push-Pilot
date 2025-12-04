@@ -1,7 +1,7 @@
 
 # 📄 **Backend Developer Guide for PushPilot (Markdown Code)**
 
-```markdown
+
 # Backend Developer Guide for PushPilot
 
 ## 1. Backend Philosophy & Project Structure
@@ -14,7 +14,7 @@
 - **Everything logged & auditable**.
 
 ### Project Structure
-```
+
 
 pushpilot_backend/
 
@@ -46,8 +46,7 @@ Dockerfile
 
 docker-compose.yml
 
-```
-```markdown
+
 
 ---
 
@@ -73,7 +72,7 @@ Expose via environment variables.
 
 ### Workspace Middleware
 
-```python
+python
 class WorkspaceMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if not request.user.is_authenticated:
@@ -100,14 +99,15 @@ class WorkspaceMiddleware(MiddlewareMixin):
             return
 
         request.workspace = ws
-```
+
+        
 
 Use in views:
 
-```python
+python
 def get_queryset(self):
     return Model.objects.filter(workspace=self.request.workspace)
-```
+
 
 ---
 
